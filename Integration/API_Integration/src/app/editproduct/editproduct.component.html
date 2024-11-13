@@ -1,0 +1,35 @@
+<h1>Enter Products Details</h1>
+<div class="container">
+<form action="">
+    <div class="mb-3">
+        <label for="ProductName" class="form-label">ProducId</label>
+        <input type="hidden" [(ngModel)]="product.id" name="id" class="form-control">
+       </div>
+    <div class="mb-3">
+      <label for="ProductName" class="form-label">ProductName</label>
+      <input type="text" [(ngModel)]="product.name" name="name" class="form-control">
+     </div>
+     <div class="mb-3">
+        <label for="ProductDescription" class="form-label">ProductDescription</label>
+        <input type="text" [(ngModel)]="product.description" name="description" class="form-control">
+       </div>
+       <div class="mb-3">
+        <label for="Productprice" class="form-label">Price</label>
+        <input type="number" [(ngModel)]="product.price" name="description" class="form-control">
+       </div>
+
+       <label for="Productprice" class="form-label">CHoose Brands</label>
+       <select [(ngModel)]="product.brandId" name="brandId" id="" class="form-control">
+        <option value="none">Choose Brands</option>
+        @for(item of myBrands; track $index){
+            <option 
+            
+            [value]="item.id">{{item.name}}
+
+            </option>
+        }
+       </select><br>
+       <input type="button" value="Save Changes" (click)="EditProduct(product)" class="form-control btn btn-info">
+    </form>
+</div>
+
